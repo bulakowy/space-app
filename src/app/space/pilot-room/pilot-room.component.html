@@ -1,0 +1,6 @@
+<app-pilot *ngFor="let p of pilots" [pilot]="p" [class.selected]="p === selectedPilot">
+  <button *ngIf="p === selectedPilot; else selectButton" (click)="select(null)">Deselect</button>
+  <ng-template #selectButton>
+    <button (click)="select(p)">Select</button>
+  </ng-template>
+</app-pilot>

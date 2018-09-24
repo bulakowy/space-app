@@ -12,9 +12,15 @@
     background-color: rgba(0, 0, 0, 1.0);
 }
 
-img {
+.images {
+  position: relative;
   max-width: 100px;
   height: 100px;
+}
+
+.images img {
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .health {
@@ -35,7 +41,16 @@ img {
   color: rgb(21, 211, 218);
 }
 
-.pilot.inactive {
-  display: none;
+.pilot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  border: 1px black solid;
 }
-height: 100%;
+
+.ship {
+  width: 100px;
+  height: 100px;
+}
+
