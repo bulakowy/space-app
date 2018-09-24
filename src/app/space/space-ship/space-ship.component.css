@@ -1,0 +1,30 @@
+:host {
+  display: inline-block;
+  text-align: center;
+  max-width: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* margin: 5px; */
+  padding: 5px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.health {
+  background-color: red;
+  height: 10px;
+}
+    
+.health div {
+  background-color: green;
+  height: 100%;
+}
+
+.property {
+  color: rgb(63, 62, 62);
+}
+    
+.property.active {
+  color: rgb(21, 211, 218);
+}
