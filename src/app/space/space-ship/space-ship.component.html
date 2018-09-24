@@ -12,4 +12,7 @@
   <div class="property" [class.active]="spaceShip.activeWeapons">
     WEAPONS
   </div>
+  <div class="pilot" [class.inactive]="spaceShip.pilot == null">
+    <img [src]="spaceShip?.pilot?.imageUrl"/>
+  </div>
 </div>
