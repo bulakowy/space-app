@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Pilot } from '../model/pilot';
 
 @Component({
@@ -10,19 +10,29 @@ export class PilotRoomComponent implements OnInit {
 
   pilots: Pilot[] = [];
   selectedPilot: Pilot;
+  @Output() selectedPilotOutput = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
     this.pilots.push(new Pilot('Kamil T', '/assets/alf.jpg'));
     this.pilots.push(new Pilot('Daniel S', '/assets/kermit.jpg'));
-    const p = new Pilot('Adam B', '/assets/kermit.jpg');
-    this.pilots.push(p);
-    this.select(p);
+    this.pilots.push(new Pilot('Adam B', '/assets/kermit.jpg'));
   }
 
   select(pilot: Pilot) {
     this.selectedPilot = pilot;
+    this.selectedPilotOutput.emit(pilot);
+  }
+
+  leavePilotRoom() {
+    const index = this.pilots.indexOf(this.selectedPilot);
+    this.pilots.splice(index, 1);
+    this.select(null);
+  }
+
+  addPilot(pilot: Pilot) {
+    this.pilots.push(pilot);
   }
 
 }

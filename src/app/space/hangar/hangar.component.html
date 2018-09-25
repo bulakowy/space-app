@@ -3,10 +3,19 @@
   <div class="col-8">
     <div class="ships">
       <app-space-ship *ngFor="let s of spaceShips" [spaceShip]="s">
+        <button *ngIf="s.pilot == null && selectedPilot != null" (click)="pilotShip(s)">Pilotuj</button>
+        <button *ngIf="s.pilot != null" (click)="leaveShip(s)">Opuść</button>
       </app-space-ship>
     </div>
   </div>
   <div class="col-4">
-    <app-pilot-room></app-pilot-room>
+    <div class="row">
+      <app-pilot-room (selectedPilotOutput)="selectedPilot = $event">
+      </app-pilot-room>
+    </div>
+    <div class="row">
+      <app-engineers-room>
+      </app-engineers-room>
+    </div>
   </div>
 </div>

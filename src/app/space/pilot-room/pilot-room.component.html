@@ -1,6 +1,7 @@
+<h3>Pilot room</h3>
 <app-pilot *ngFor="let p of pilots" [pilot]="p" [class.selected]="p === selectedPilot">
-  <button *ngIf="p === selectedPilot; else selectButton" (click)="select(null)">Deselect</button>
+  <button *ngIf="p === selectedPilot; else selectButton" (click)="select(null)">Odznacz</button>
   <ng-template #selectButton>
-    <button (click)="select(p)">Select</button>
+    <button (click)="select(p)">Zaznacz</button>
   </ng-template>
 </app-pilot>

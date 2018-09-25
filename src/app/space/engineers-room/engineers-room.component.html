@@ -1,0 +1,23 @@
+<h3>Engineers room</h3>
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  Liczba statków:
+  <input #shipCountInput="ngModel" type="text" name="shipCount" ngModel required pattern="[1-5]" size="1" />
+  <p *ngIf="shipCountInput.hasError('pattern') && shipCountInput.touched" class="error">Liczba statków musi mieścić się
+    w przedziale 1-5</p>
+
+  <br />
+
+  <div class="control-group">
+    <br/>
+    <div *ngFor="let t of spaceShipTypes">
+      <label>
+        <input type="radio" name="shipType" [value]="t.value" ngModel required>
+        {{t.label}}
+        <br />
+      </label>
+    </div>
+  </div>
+
+  <br />
+  <button type="submit" [disabled]="form.invalid">Produkuj</button>
+</form>
