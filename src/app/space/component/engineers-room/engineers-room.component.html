@@ -19,5 +19,5 @@
   </div>
 
   <br />
-  <button type="submit" [disabled]="form.invalid">Produkuj</button>
+  <button type="submit" [disabled]="form.invalid || isProductionInProgress()">Produkuj</button>
 </form>

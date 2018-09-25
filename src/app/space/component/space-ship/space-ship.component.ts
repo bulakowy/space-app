@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SpaceShip } from '../model/space-ship';
+import { SpaceShip } from '../../model/space-ship';
 
 @Component({
   selector: 'app-space-ship',
