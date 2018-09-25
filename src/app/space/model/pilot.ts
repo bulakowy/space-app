@@ -1,24 +1,29 @@
+import {PilotAttrs} from './pilot-attrs';
+
 export class Pilot {
 
-    static defaultImageUrl = '/assets/alf.jpg';
+  static defaultImageUrl = '/assets/alf.jpg';
 
-    firstName: string;
-    lastName: string;
-    imageUrl: string;
+  id: number;
+  firstName: string;
+  lastName: string;
+  imageUrl: string;
 
-    constructor(fullName: string, imageUrl = Pilot.defaultImageUrl) {
-        this.fullName = fullName;
-        this.imageUrl = imageUrl;
-    }
+  constructor(attrs: Partial<PilotAttrs> = {}) {
+    this.id = attrs.id;
+    this.firstName = attrs.firstName;
+    this.lastName = attrs.lastName;
+    this.imageUrl = attrs.imageUrl || Pilot.defaultImageUrl;
+  }
 
-    get fullName(): string {
-        return this.firstName + ' ' + this.lastName;
-        // return `${this.firstName} ${this.lastName}`;
-    }
+  get fullName(): string {
+    return this.firstName + ' ' + this.lastName;
+    // return `${this.firstName} ${this.lastName}`;
+  }
 
-    set fullName(value: string) {
-        const values = value.split(' ');
-        this.firstName = values[0];
-        this.lastName = values[1];
-    }
+  set fullName(value: string) {
+    const values = value.split(' ');
+    this.firstName = values[0];
+    this.lastName = values[1];
+  }
 }
