@@ -20,4 +20,6 @@
 
   <br />
   <button type="submit" [disabled]="form.invalid || isProductionInProgress()">Produkuj</button>
+  <br /><br />
+  Ships produced: {{shipCount | async}}
 </form>
