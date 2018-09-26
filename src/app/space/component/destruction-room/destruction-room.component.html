@@ -1,0 +1,13 @@
+<h3>Destruction room</h3>
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+
+  Delete ship:
+  <select #indexInput="ngModel" name="shipIndex" ngModel required>
+    <option *ngFor="let s of spaceShips | async; index as i" [ngValue]="i">{{s.modelName}}</option>
+  </select>
+
+  <p *ngIf="indexInput.hasError('required') && indexInput.touched" class="error">Podaj index statku do usniecia!</p>
+
+  <br />
+  <button type="submit" [disabled]="form.invalid">Usun</button>
+</form>

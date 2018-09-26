@@ -1,5 +1,10 @@
 <h1>Hangar</h1>
 <div class="row">
+  <div class="sub-nav">
+    <a routerLink="production" routerLinkActive="active">Production</a>
+    &nbsp;
+    <a routerLink="destruction" routerLinkActive="active">Destruction</a>
+  </div>
   <div class="col-8">
     <div class="ships">
       <app-space-ship *ngFor="let s of ships | async" [spaceShip]="s">
@@ -14,8 +19,7 @@
       </app-pilot-room>
     </div>
     <div class="row">
-      <app-engineers-room (shipProduced)="addShip($event)">>
-      </app-engineers-room>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

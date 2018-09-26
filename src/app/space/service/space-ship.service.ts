@@ -6,6 +6,7 @@ import {SpaceShip} from '../model/space-ship';
 import {SpaceShipType} from '../model/space-ship-type.enum';
 import {BomberShip} from '../model/bomber-ship';
 import {FighterShip} from '../model/fighter-ship';
+import {DestructionFormValue} from '../model/destruction-form-value';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,12 @@ export class SpaceShipService {
     } else {
       return new FighterShip();
     }
+  }
+
+  removeShip(formValue: DestructionFormValue) {
+    const ships = [...this.hangarShips.getValue()];
+    ships.splice(formValue.shipIndex, 1);
+    this.hangarShips.next(ships);
   }
 
 }

@@ -8,6 +8,7 @@ import {PilotComponent} from './component/pilot/pilot.component';
 import {PilotRoomComponent} from './component/pilot-room/pilot-room.component';
 import {EngineersRoomComponent} from './component/engineers-room/engineers-room.component';
 import {SharedModule} from '../shared/shared.module';
+import { DestructionRoomComponent } from './component/destruction-room/destruction-room.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {SharedModule} from '../shared/shared.module';
     SpaceShipComponent,
     PilotComponent,
     PilotRoomComponent,
-    EngineersRoomComponent
+    EngineersRoomComponent,
+    DestructionRoomComponent
   ],
   exports: []
 })
