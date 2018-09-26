@@ -8,10 +8,10 @@
     <div [style.width.%]="spaceShip.health"></div>
   </div>
   <div class="property" [class.active]="spaceShip.activeShields">
-    SHIELDS
+    {{spaceShip.activeShields | tickize }} SHIELDS
   </div>
   <div class="property" [class.active]="spaceShip.activeWeapons">
-    WEAPONS
+    {{spaceShip.activeWeapons | tickize }} WEAPONS
   </div>
   <div class="buttons">
     <ng-content></ng-content>
