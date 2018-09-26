@@ -1,9 +1,27 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="save()">
   First name: <input type="text" [formControl]="form.get('firstName')">
+  <br/>
+  <ng-container *ngIf="form.get('firstName').touched">
+  <span *ngIf="form.get('firstName').hasError('required')" class="error">
+    podaj wartość
+  </span>
+  </ng-container>
   <br/>
   Last name: <input type="text" [formControl]="form.get('lastName')">
   <br/>
-  <img [src]="form.get('imageUrl').value" />
+  <ng-container *ngIf="form.get('lastName').touched">
+  <span *ngIf="form.get('lastName').hasError('required')" class="error">
+    podaj wartość
+  </span>
+    <span *ngIf="form.get('lastName').hasError('name')" class="error">
+    piszemy wielka litera
+  </span>
+    <span *ngIf="form.get('lastName').hasError('forbiddenName')" class="error">
+    zakazane nazwisko
+  </span>
+  </ng-container>
+  <br/>
+  <img [src]="form.get('imageUrl').value"/>
   <br/>
   Image url: <input type="text" [formControl]="form.get('imageUrl')">
   <br/>

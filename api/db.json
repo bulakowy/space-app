@@ -17,6 +17,15 @@
       "firstName": "Daniel",
       "lastName": "S",
       "imageUrl": "/assets/kermit.jpg"
+    },
+    {
+      "id": 4,
+      "firstName": "Kamil",
+      "lastName": "T",
+      "imageUrl": "/assets/kamil.png"
     }
+  ],
+  "forbiddenNames": [
+    "Topolewski"
   ]
 }

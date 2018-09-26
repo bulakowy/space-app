@@ -15,12 +15,7 @@ export class PilotResolver implements Resolve<Pilot> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Pilot> | Promise<Pilot> | Pilot {
     const id = route.paramMap.get('id');
     if (id === 'new') {
-      return this.pilotService.getPilots().pipe(
-        map((pilots) => {
-          console.log('XXX', pilots.length);
-          return new Pilot({id: pilots.length + 1});
-        })
-      );
+      return new Pilot();
     } else {
       return this.pilotService.getPilot(+id);
     }

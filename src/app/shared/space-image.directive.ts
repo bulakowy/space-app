@@ -1,18 +1,25 @@
 import {Directive, HostBinding, HostListener} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Directive({
   selector: 'img'
 })
 export class SpaceImageDirective {
 
-  zoom = 1.0;
+  constructor(private sanitizer: DomSanitizer) {
+  }
 
-  @HostBinding('style.transform') get scale() {
-    return `rotate(${this.zoom}deg)`;
+  zoom = 1.0;
+  rotate = 1.0;
+
+
+  @HostBinding('style.transform') get sscale() {
+    return this.sanitizer.bypassSecurityTrustStyle(`rotate(${this.rotate}deg) scale(${this.zoom})`);
   }
 
   @HostListener('mousemove') zoomIn() {
-    this.zoom *= 1.1;
+    this.zoom += 0.01;
+    this.rotate += 2;
   }
 
   @HostListener('mouseout') reset() {
