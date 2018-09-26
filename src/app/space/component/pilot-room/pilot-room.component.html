@@ -1,7 +1,10 @@
 <h3>Pilot room</h3>
+<button [routerLink]="['pilots', 'new']">Dodaj pilota</button>
+<br/>
 <app-pilot *ngFor="let p of pilots" [pilot]="p" [class.selected]="p === selectedPilot">
   <button *ngIf="p === selectedPilot; else selectButton" (click)="select(null)">Odznacz</button>
   <ng-template #selectButton>
     <button (click)="select(p)">Zaznacz</button>
   </ng-template>
+  <button [routerLink]="['pilots', p.id]">Edytuj</button>
 </app-pilot>

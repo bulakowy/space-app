@@ -9,6 +9,7 @@ import {PilotRoomComponent} from './component/pilot-room/pilot-room.component';
 import {EngineersRoomComponent} from './component/engineers-room/engineers-room.component';
 import {SharedModule} from '../shared/shared.module';
 import { DestructionRoomComponent } from './component/destruction-room/destruction-room.component';
+import { PilotFormComponent } from './component/pilot-form/pilot-form.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { DestructionRoomComponent } from './component/destruction-room/destructi
     PilotComponent,
     PilotRoomComponent,
     EngineersRoomComponent,
-    DestructionRoomComponent
+    DestructionRoomComponent,
+    PilotFormComponent
   ],
   exports: []
 })

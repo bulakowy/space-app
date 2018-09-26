@@ -8,7 +8,7 @@ import {A2sCommModule} from 'a2s-comm';
 import {SpaceModule} from './space/space.module';
 import {HttpClientModule} from '@angular/common/http';
 import { SpaceImageDirective } from './shared/space-image.directive';
-import { BlackHoleComponent } from './black-hole/black-hole.component';
+import { BlackHoleComponent } from './shared/black-hole/black-hole.component';
 
 @NgModule({
   declarations: [

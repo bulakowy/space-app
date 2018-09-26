@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  First name: <input type="text" [formControl]="form.get('firstName')">
+  <br/>
+  Last name: <input type="text" [formControl]="form.get('lastName')">
+  <br/>
+  <img [src]="form.get('imageUrl').value" />
+  <br/>
+  Image url: <input type="text" [formControl]="form.get('imageUrl')">
+  <br/>
+  <button type="submit">Zapisz</button>
+  <button routerLink="/">Anuluj</button>
+</form>
