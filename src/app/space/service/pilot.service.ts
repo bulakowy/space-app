@@ -4,7 +4,6 @@ import {Observable} from 'rxjs';
 import {Pilot} from '../model/pilot';
 import {PilotAttrs} from '../model/pilot-attrs';
 import {map} from 'rxjs/operators';
-import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +26,6 @@ export class PilotService {
   }
 
   savePilot(pilotAttrs: PilotAttrs): Observable<Pilot> {
-    console.log('aaaaaaaaaaa');
     if (pilotAttrs.id) {
       return this.http.put<PilotAttrs>(`/api/pilots/${pilotAttrs.id}`, pilotAttrs).pipe(
         map((data) => new Pilot(data))

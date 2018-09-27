@@ -3,7 +3,7 @@ import {FormControl} from '@angular/forms';
 import {of} from 'rxjs';
 import {ajax} from 'rxjs/ajax';
 
-fdescribe('PilotValidators', () => {
+describe('PilotValidators', () => {
 
   describe('startsWithCapitalLetter', function () {
 
